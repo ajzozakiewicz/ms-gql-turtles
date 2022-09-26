@@ -1,0 +1,31 @@
+enum Species {
+  SNAPPING
+  BOX
+  SEA
+  PAINTED
+  LOGGERHEAD
+}
+
+type Turtle {
+  id: ID!
+  species: Species!
+}
+
+type TurtleMutationResponse {
+  statusCode: Int!
+  message: String
+}
+
+input EditTurtleInput {
+  id: ID!
+  species: Species
+}
+
+type Query {
+  turtles: [Turtle]
+}
+
+type Mutation {
+  editTurtle(turtle: EditTurtleInput!): TurtleMutationResponse
+  createTurtle(species: Species!): TurtleMutationResponse
+}

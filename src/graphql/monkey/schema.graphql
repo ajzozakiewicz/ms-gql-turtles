@@ -1,0 +1,29 @@
+enum MonkeySpecies {
+  SPIDER
+  GORILLA
+  CHIMPANZEE
+}
+
+type Monkey {
+  id: ID!
+  species: MonkeySpecies!
+}
+
+type MonkeyMutationResponse {
+  statusCode: Int!
+  message: String
+}
+
+input EditMonkeyInput {
+  id: ID!
+  species: MonkeySpecies
+}
+
+type Query {
+  monkeys: [Monkey]
+}
+
+type Mutation {
+  editMonkey(monkey: EditMonkeyInput!): MonkeyMutationResponse
+  createMonkey(species: MonkeySpecies!): MonkeyMutationResponse
+}
