@@ -4,6 +4,8 @@ enum Species {
   SEA
   PAINTED
   LOGGERHEAD
+  POND_SLIDER
+  INDIAN_FLAPSHELL
 }
 
 type Turtle {
