@@ -6,6 +6,7 @@ enum Species {
   LOGGERHEAD
   POND_SLIDER
   INDIAN_FLAPSHELL
+  MATA_MATA
 }
 
 type Turtle {
