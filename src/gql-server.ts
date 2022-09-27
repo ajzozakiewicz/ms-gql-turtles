@@ -27,7 +27,7 @@ const hive = createHive({
   reporting: {
     author: 'AJ Zozakiewicz',
     serviceName: 'ms-gql-turtles',
-    commit: 'test'
+    commit: process.env.GIT_SHA || 'N/A'
   }
 })
 
