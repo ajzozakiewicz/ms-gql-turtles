@@ -9,7 +9,8 @@
     "dev": "ts-node -r graphql-import-node/register ./src/index.ts",
     "predev": "npm run generate",
     "prestart": "npm run generate",
-    "check-schema": "hive schema:check --service ms-gql-turtles \"**/*.graphql\"",
+    "publish-schema": "hive schema:publish \"**/*.graphql\"",
+    "check-schema": "hive schema:check \"**/*.graphql\"",
     "start": "ts-node -r graphql-import-node/register ./src/index.ts"
   },
   "author": "",
