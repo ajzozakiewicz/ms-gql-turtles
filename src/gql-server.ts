@@ -23,11 +23,6 @@ const hive = createHive({
         version: 'unknown'
       }
     }
-  },
-  reporting: {
-    author: 'AJ Zozakiewicz',
-    serviceName: 'ms-gql-turtles',
-    commit: process.env.GIT_SHA || 'N/A'
   }
 })
 
@@ -40,8 +35,6 @@ const application = createApplication({
 
 const schema = application.schema
 const execute = application.createExecution()
-
-hive.reportSchema({ schema })
 
 const gqlServer = graphqlHTTP({
     schema,
