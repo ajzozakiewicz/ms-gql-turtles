@@ -1,14 +1,12 @@
 'use strict'
 import { graphqlHTTP } from 'express-graphql'
-import { createApplication } from 'graphql-modules'
-import { turtleModule, monkeyModule } from './graphql'
+import { application } from './graphql'
 import { createHive } from '@graphql-hive/client'
-import getHiveToken from './get-hive-token'
 
 const hive = createHive({
   enabled: true,
   debug: true,
-  token: getHiveToken(),
+  token: process.env.HIVE_TOKEN,
   usage: {
     clientInfo: (context) => {
       if (context.headers['user-agent'].includes('insomnia')) {
@@ -29,18 +27,10 @@ const hive = createHive({
     serviceName: 'ms-gql-turtles',
     commit: process.env.GIT_SHA || 'N/A'
   }
-})
-
-const application = createApplication({
-  modules: [
-    turtleModule,
-    monkeyModule
-  ]
-})
+}) 
 
 const schema = application.schema
 const execute = application.createExecution()
-
 hive.reportSchema({ schema })
 
 const gqlServer = graphqlHTTP({

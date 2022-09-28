@@ -16,3 +16,4 @@ yarn-error.log*
 !cdk8s.yaml.js
 !jest.config.js
 node_modules
+schema.graphql

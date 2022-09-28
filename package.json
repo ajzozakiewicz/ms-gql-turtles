@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "graphql-codegen",
-    "dev": "ts-node -r graphql-import-node/register ./src/index.ts",
+    "dev": "ts-node ./src/index.ts",
     "predev": "npm run generate",
     "prestart": "npm run generate",
-    "check-schema": "hive schema:check --service ms-gql-turtles \"**/*.graphql\"",
-    "start": "ts-node -r graphql-import-node/register ./src/index.ts"
+    "precheck-schema": "ts-node ./scripts/merge-schemas.ts",
+    "check-schema": "hive schema:check schema.graphql --service ms-gql-turtles --token $HIVE_TOKEN",
+    "start": "ts-node ./src/index.ts"
   },
   "author": "",
   "license": "ISC",
