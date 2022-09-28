@@ -23,11 +23,6 @@ const hive = createHive({
         version: 'unknown'
       }
     }
-  },
-  reporting: {
-    author: 'AJ Zozakiewicz',
-    serviceName: 'ms-gql-turtles',
-    commit: process.env.GIT_SHA || 'N/A'
   }
 })
 
