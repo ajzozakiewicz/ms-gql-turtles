@@ -36,8 +36,6 @@ const application = createApplication({
 const schema = application.schema
 const execute = application.createExecution()
 
-hive.reportSchema({ schema })
-
 const gqlServer = graphqlHTTP({
     schema,
     customExecuteFn: async (args) => {
